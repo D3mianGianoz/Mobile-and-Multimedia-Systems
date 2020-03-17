@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">MyBMI</string>
+
+    <!-- Core function strings -->
+    <string name="bmiF_title">BMI Calculator</string>
+
+    <string name="bmiF_massL">Mass</string>
+    <string name="bmiF_heightL">Height</string>
+    <string name="bmiF_calculateL">Count</string>
+
+    <string name="bmiF_hint_cm">Insert your height in cm</string>
+    <string name="bmiF_hint_inches">Insert your height in inches</string>
+    <string name="bmiF_hint_kg">Insert your mass in kg</string>
+    <string name="bmiF_hint_pounds">Insert your mass in pounds</string>
+
+    <string name="bmiF_mass_error">This is not a valid mass</string>
+    <string name="bmiF_height_error">This is not a valid height</string>
+
+    <!-- Details of bmi -->
+    <array name="bmi_status">
+        <item> less than 18.5 underweight, so you may need to put on some weight. You are recommended to ask your Doctor or a dietician for advice.</item>
+        <item> 18.5 – 24.9 at a healthy weight for your height. By maintaining a healthy weight, you lower your risk of developing serious health problems.</item>
+        <item> 25 – 29.9 slightly overweight. You may be advised to lose some weight for health reasons. You are recommended to talk to your Doctor or a dietician for advice.</item>
+        <item> over 30 moderately obese (classification of class 1 obese). Your health may be at risk if you do not lose weight. You are recommended to talk to your Doctor or a dietician for advice.</item>
+        <item> over 35 severely obese (classification of class 2 obese). Your health may be at risk if you do not lose weight. You are recommended to talk to your Doctor or a dietician for advice.</item>
+        <item> over 40 very severely obese (classification of class 3 obese). Your health may be at risk if you do not lose weight. You are recommended to talk to your Doctor or a dietician for advice.</item>
+    </array>
+    <string name="detailsF_title">According to BMI you are</string>
+
+    <!-- My info -->
+    <string name="self_description">Bye! I\'m Damiano and I\'m from Ivrea, a small town in Piedmont where the Olivetti company was born, grew up and died.
+        I\'m 22 years old and I\'m in my first year of the Master\'s degree: Artificial Intelligence at the University of Turin.
+        I know and have used the following programming languages: C, Java, Kotlin, Haskell, Python.
+        I am here thanks to the Erasmus+ program for the summer semester and I was impressed by the greatness of the Polytechnic and the beauty of Wroclaw.</string>
+</resources>

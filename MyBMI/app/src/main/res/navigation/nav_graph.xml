@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bmiFragment">
+
+    <fragment
+        android:id="@+id/bmiFragment"
+        android:name="pwr.edu.myinfo.BmiFragment"
+        android:label="bmi_fragment"
+        tools:layout="@layout/bmi_fragment" >
+        <action
+            android:id="@+id/action_bmiFragment_to_profile"
+            app:destination="@id/profile" />
+        <action
+            android:id="@+id/action_bmiFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="pwr.edu.myinfo.Profile"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="pwr.edu.myinfo.DetailsFragment"
+        android:label="details_fragment"
+        tools:layout="@layout/details_fragment" />
+</navigation>
