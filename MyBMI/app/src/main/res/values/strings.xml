@@ -3,18 +3,20 @@
 
     <!-- Core function strings -->
     <string name="bmiF_title">BMI Calculator</string>
-
     <string name="bmiF_massL">Mass</string>
     <string name="bmiF_heightL">Height</string>
-    <string name="bmiF_calculateL">Count</string>
-
+    <string name="bmiF_calculateL">Calculate BMI</string>
     <string name="bmiF_hint_cm">Insert your height in cm</string>
     <string name="bmiF_hint_inches">Insert your height in inches</string>
     <string name="bmiF_hint_kg">Insert your mass in kg</string>
     <string name="bmiF_hint_pounds">Insert your mass in pounds</string>
-
     <string name="bmiF_mass_error">This is not a valid mass</string>
     <string name="bmiF_height_error">This is not a valid height</string>
+
+    <!-- actions -->
+    <string name="action_imperial">Imperial</string>
+    <string name="action_metric">Metric</string>
+    <string name="action_about">About</string>
 
     <!-- Details of bmi -->
     <array name="bmi_status">
@@ -28,7 +30,7 @@
     <string name="detailsF_title">According to BMI you are</string>
 
     <!-- My info -->
-    <string name="self_description">Bye! I\'m Damiano and I\'m from Ivrea, a small town in Piedmont where the Olivetti company was born, grew up and died.
+    <string name="self_description">Hello! I\'m Damiano and I\'m from Ivrea, a small town in Piedmont where the Olivetti company was born, grew up and died.
         I\'m 22 years old and I\'m in my first year of the Master\'s degree: Artificial Intelligence at the University of Turin.
         I know and have used the following programming languages: C, Java, Kotlin, Haskell, Python.
         I am here thanks to the Erasmus+ program for the summer semester and I was impressed by the greatness of the Polytechnic and the beauty of Wroclaw.</string>

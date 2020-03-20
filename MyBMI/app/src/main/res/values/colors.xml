@@ -3,4 +3,13 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <!--    Colors for emphasis-->
+    <color name="yellow_anoressia">#ffff00</color>
+    <color name="orange_overweight">#ff8000</color>
+    <color name="green_salute">#00ff00</color>
+    <color name="red_obesity">#ff0000</color>
+    <color name="dark_red_sever_obesity">#990000</color>
+    <color name="very_dark_red_sever_obesity">#660000</color>
+
 </resources>
