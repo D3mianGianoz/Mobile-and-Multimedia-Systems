@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="task"
+            type="pwr.edu.mytaskmanager.Task" />
+        <variable
+            name="clickListener"
+            type="pwr.edu.mytaskmanager.MainActivity" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <!--            android:onClick="@{() -> clickListener.onClick(task)}"-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_task"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Bookmark image-->
+            <ImageView
+                android:id="@+id/bookmarkImage"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_send" />
+
+            <!-- Text Layout -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/text_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bookmarkImage"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!-- Project Title -->
+
+                <TextView
+                    android:id="@+id/task_date2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/task_title"
+                    app:layout_constraintStart_toEndOf="@+id/task_date"
+                    app:layout_constraintTop_toBottomOf="@+id/task_title"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="status" />
+
+                <TextView
+                    android:id="@+id/task_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Verly long title" />
+
+                <!-- Project Association -->
+                <TextView
+                    android:id="@+id/task_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/task_title"
+                    app:layout_constraintTop_toBottomOf="@+id/task_title"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="Date Date Date" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
