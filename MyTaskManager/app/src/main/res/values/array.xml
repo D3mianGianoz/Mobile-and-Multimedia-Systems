@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="type_of_task">
+        <item>Todo</item>
+        <item>Email</item>
+        <item>Phone</item>
+        <item>Meeting</item>
+        <item>Video Call</item>
+    </string-array>
+</resources>

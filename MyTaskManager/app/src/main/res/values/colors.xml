@@ -3,4 +3,12 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <!-- Colori per lo stile generico-->
+    <color name="colorBodyText">#C4C4C4</color>
+    <color name="colorButtonText">#F2F2F2</color>
+    <color name="colorHighEmphasis">#DE000000</color>
+    <color name="colorGreyProject">#747474</color>
+    <color name="colorPinkStroke">#4DEA086D</color>
+    <color name="colorPureBlack">#000000</color>
 </resources>

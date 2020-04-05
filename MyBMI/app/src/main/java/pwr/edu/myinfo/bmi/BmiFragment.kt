@@ -90,7 +90,6 @@ class BmiFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         Log.i("Debug", "Funziona $item")
-
         // Handle item selection
         return when (item.itemId) {
             R.id.action_imperial -> {

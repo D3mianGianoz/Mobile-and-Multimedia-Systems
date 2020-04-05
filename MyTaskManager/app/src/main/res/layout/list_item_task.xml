@@ -4,28 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="task"
             type="pwr.edu.mytaskmanager.Task" />
+
         <variable
             name="clickListener"
-            type="pwr.edu.mytaskmanager.MainActivity" />
+            type="pwr.edu.mytaskmanager.ui.main.TasksAdapter.OnClickListener" />
     </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <!--            android:onClick="@{() -> clickListener.onClick(task)}"-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/item_task"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:onClick="@{() -> clickListener.onClick(task)}"
             android:orientation="vertical">
 
-            <!-- Bookmark image-->
+            <!-- Type of task image-->
             <ImageView
-                android:id="@+id/bookmarkImage"
+                android:id="@+id/typeImage"
+                typeOfTask="@{task.typeOfTask}"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="@dimen/icon_size"
                 android:layout_marginStart="16dp"
@@ -43,25 +46,10 @@
                 android:layout_marginStart="16dp"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/bookmarkImage"
+                app:layout_constraintStart_toEndOf="@+id/typeImage"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <!-- Project Title -->
-
-                <TextView
-                    android:id="@+id/task_date2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="16dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/task_title"
-                    app:layout_constraintStart_toEndOf="@+id/task_date"
-                    app:layout_constraintTop_toBottomOf="@+id/task_title"
-                    app:layout_constraintVertical_bias="0.0"
-                    tools:text="status" />
-
                 <TextView
                     android:id="@+id/task_title"
                     android:layout_width="0dp"
@@ -69,6 +57,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:text="@{task.title}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -81,11 +70,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="16dp"
+                    android:text="@{task.dueTueDate.toGMTString()}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/task_title"
                     app:layout_constraintTop_toBottomOf="@+id/task_title"
                     app:layout_constraintVertical_bias="0.0"
                     tools:text="Date Date Date" />
+
+                <TextView
+                    android:id="@+id/task_status"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@{task.title}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/task_title"
+                    app:layout_constraintStart_toEndOf="@+id/task_date"
+                    app:layout_constraintTop_toBottomOf="@+id/task_title"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:text="status" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

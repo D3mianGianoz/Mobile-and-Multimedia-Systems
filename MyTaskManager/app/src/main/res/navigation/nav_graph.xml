@@ -2,4 +2,40 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph" />
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="pwr.edu.mytaskmanager.ui.main.MainFragment"
+        android:label="Task Manager"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_createTaskFragment"
+            app:destination="@id/createTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="pwr.edu.mytaskmanager.ui.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/profile_fragment" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="pwr.edu.mytaskmanager.ui.details.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/details_fragment" >
+        <argument
+            android:name="task"
+            app:argType="pwr.edu.mytaskmanager.Task" />
+    </fragment>
+    <fragment
+        android:id="@+id/createTaskFragment"
+        android:name="pwr.edu.mytaskmanager.ui.create.CreateTaskFragment"
+        android:label="CreateTaskFragment"
+        tools:layout="@layout/create_task_fragment" />
+</navigation>

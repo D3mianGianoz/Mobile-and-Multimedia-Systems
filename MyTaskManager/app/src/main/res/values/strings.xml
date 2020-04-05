@@ -2,11 +2,26 @@
     <string name="app_name">MyTaskManager</string>
     <string name="title_activity_fragment_main">FragmentMainActivity</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!--  Create -->
+    <string name="label_title">Title of the task</string>
+    <string name="title_hint">Insert a title</string>
+    <string name="label_description">Description of the task</string>
+    <string name="description_hint">Insert a description</string>
+    <string name="label_date">Date of the task</string>
+    <string name="date_hint">Choose a date</string>
+    <string name="label_type">Type of the task</string>
+    <string name="type_hint">Choose a type</string>
+    <string name="conferma">Create</string>
+    <string name="undo">Cancel</string>
+
+    <string name="lorem_ipsum">Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato. Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, che includeva versioni del Lorem Ipsum.</string>
+    <string name="self_description">Hello! I\'m Damiano and I\'m from Ivrea, a small town in Piedmont where the Olivetti company was born, grew up and died.
+        I\'m 22 years old and I\'m in my first year of the Master\'s degree: Artificial Intelligence at the University of Turin.
+        I know and have used the following programming languages: C, Java, Kotlin, Haskell, Python.
+        I am here thanks to the Erasmus+ program for the summer semester and I was impressed by the greatness of the Polytechnic and the beauty of Wroclaw.</string>
+    <string name="menu_about">About</string>
+    <string name="remove_task_bt">Remove Task</string>
 </resources>
