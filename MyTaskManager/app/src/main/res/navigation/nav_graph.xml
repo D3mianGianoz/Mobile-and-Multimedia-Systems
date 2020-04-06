@@ -17,18 +17,23 @@
             app:destination="@id/detailsFragment" />
         <action
             android:id="@+id/action_mainFragment_to_createTaskFragment"
-            app:destination="@id/createTaskFragment" />
+            app:destination="@id/createTaskFragment"
+            app:launchSingleTop="true" />
+        <argument
+            android:name="newTask"
+            app:argType="pwr.edu.mytaskmanager.Task"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="pwr.edu.mytaskmanager.ui.ProfileFragment"
-        android:label="ProfileFragment"
+        android:label="Author Profile"
         tools:layout="@layout/profile_fragment" />
     <fragment
         android:id="@+id/detailsFragment"
         android:name="pwr.edu.mytaskmanager.ui.details.DetailsFragment"
-        android:label="DetailsFragment"
-        tools:layout="@layout/details_fragment" >
+        android:label="Details of the Task"
+        tools:layout="@layout/details_fragment">
         <argument
             android:name="task"
             app:argType="pwr.edu.mytaskmanager.Task" />
@@ -36,6 +41,6 @@
     <fragment
         android:id="@+id/createTaskFragment"
         android:name="pwr.edu.mytaskmanager.ui.create.CreateTaskFragment"
-        android:label="CreateTaskFragment"
+        android:label="Create Task"
         tools:layout="@layout/create_task_fragment" />
 </navigation>

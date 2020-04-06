@@ -16,10 +16,8 @@ class CreateTaskViewModel : ViewModel() {
     val title = MutableLiveData<String>()
     val description = MutableLiveData<String>()
     val date = MutableLiveData<Date>()
-//    val date: LiveData<Date>
-//        get() = _date
 
-    private val _type = MutableLiveData<TypeOfTask>(TypeOfTask.EMAIL)
+    private val _type = MutableLiveData(TypeOfTask.EMAIL)
     val type: LiveData<TypeOfTask>
         get() = _type
 
@@ -30,6 +28,36 @@ class CreateTaskViewModel : ViewModel() {
     private val _pickTypeEvent = MutableLiveData<Boolean>()
     val pickTypeEvent: LiveData<Boolean>
         get() = _pickTypeEvent
+
+    private val _cancelCreateEvent = MutableLiveData<Boolean>()
+    val cancelCreateEvent: LiveData<Boolean>
+        get() = _cancelCreateEvent
+
+    private val _createTaskEvent = MutableLiveData<Boolean>()
+    val createTaskEvent: LiveData<Boolean>
+        get() = _createTaskEvent
+
+    fun storeTheTask() {
+        _task.value = Task(
+            title = title.value,
+            description = description.value,
+            dueTueDate = date.value,
+            typeOfTask = _type.value!!,
+            status = false
+        )
+        onStoreEvent()
+    }
+
+    fun updateType(taskString: String) {
+        _type.value = when (taskString) {
+            "Todo" -> TypeOfTask.TODO
+            "Email" -> TypeOfTask.EMAIL
+            "Phone" -> TypeOfTask.PHONE
+            "Meeting" -> TypeOfTask.MEETING
+            "Video Call" -> TypeOfTask.VIDEO_CALL
+            else -> TypeOfTask.EMAIL
+        }
+    }
 
     fun falseDateEvent() {
         _pickDateEvent.value = false
@@ -43,15 +71,23 @@ class CreateTaskViewModel : ViewModel() {
         _pickTypeEvent.value = true
     }
 
-    fun falseTyepEvent() {
+    fun falseTypeEvent() {
         _pickTypeEvent.value = false
     }
 
-    fun onStoreTheTask() {
-        // TODO
+    fun onCancelTask() {
+        _cancelCreateEvent.value = true
     }
 
-    fun updateType(s: String) {
-        _type.value = TypeOfTask.valueOf(s)
+    fun falseCancelEvent() {
+        _cancelCreateEvent.value = false
+    }
+
+    private fun onStoreEvent() {
+        _createTaskEvent.value = true
+    }
+
+    fun falseStoreEvent() {
+        _createTaskEvent.value = false
     }
 }

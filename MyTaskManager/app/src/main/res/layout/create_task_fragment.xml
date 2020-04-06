@@ -31,13 +31,13 @@
 
         <ImageView
             android:id="@+id/task_avatar"
+            typeOfTask="@{viewModel.type}"
             android:layout_width="@dimen/icon_dimensions"
             android:layout_height="@dimen/icon_dimensions"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_marginTop="50dp"
             android:contentDescription="@string/app_name"
-            typeOfTask="@{viewModel.type}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -139,6 +139,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:hint="@string/date_hint"
                 android:onClick="@{() -> viewModel.onDateEvent()}"
                 android:text="@{viewModel.date.toGMTString()}"
@@ -163,46 +164,47 @@
                 style="@style/profile_edit_label_style"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:text="@string/label_type"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/date_label"
+                app:layout_constraintStart_toStartOf="@+id/type_picker"
                 app:layout_constraintTop_toBottomOf="@+id/description_text" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/type_picker"
-
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
+                android:hint="@string/type_hint"
+                android:onClick="@{() -> viewModel.onTypeEvent()}"
+                android:text="@{viewModel.type.toString()}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/date_picker"
-                app:layout_constraintTop_toBottomOf="@+id/type_label">
+                app:layout_constraintTop_toBottomOf="@+id/type_label" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/type_picker_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:hint="@string/type_hint"
-                    android:inputType="textPassword"
-                    android:onClick="@{() -> viewModel.onTypeEvent()}"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
-                    android:text="@{viewModel.type.toString()}" />
-            </com.google.android.material.textfield.TextInputLayout>
+            <!--                <com.google.android.material.textfield.TextInputEditText-->
+            <!--                    android:id="@+id/type_picker_input"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:hint="@string/type_hint"-->
+            <!--                    android:inputType="textPassword"-->
+            <!--                    android:onClick="@{() -> viewModel.onTypeEvent()}"-->
+            <!--                    android:paddingStart="16dp"-->
+            <!--                    android:paddingEnd="16dp"-->
+            <!--                    android:text="@{viewModel.type.toString()}" />-->
 
             <Button
                 android:id="@+id/edit_info_conferm"
                 style="@style/Widget.AppCompat.Button"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:onClick="@{() -> viewModel.onStoreTheTask()}"
+                android:layout_marginTop="16dp"
+                android:enabled="true"
+                android:onClick="@{() -> viewModel.storeTheTask()}"
                 android:text="@string/conferma"
                 android:textAppearance="@style/button_style"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -217,7 +219,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:backgroundTint="@color/colorPrimaryDark"
+                android:backgroundTint="@color/colorAccent"
+                android:onClick="@{() -> viewModel.onCancelTask()}"
                 android:text="@android:string/cancel"
                 android:textAppearance="@style/button_style"
                 app:layout_constraintEnd_toEndOf="@+id/edit_info_conferm"

@@ -24,4 +24,6 @@
         I am here thanks to the Erasmus+ program for the summer semester and I was impressed by the greatness of the Polytechnic and the beauty of Wroclaw.</string>
     <string name="menu_about">About</string>
     <string name="remove_task_bt">Remove Task</string>
+    <string name="mark_as_done_bt">Mark as Done</string>
+    <string name="list_of_task">List of Task</string>
 </resources>

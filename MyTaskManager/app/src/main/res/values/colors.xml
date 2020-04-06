@@ -11,4 +11,6 @@
     <color name="colorGreyProject">#747474</color>
     <color name="colorPinkStroke">#4DEA086D</color>
     <color name="colorPureBlack">#000000</color>
+    <color name="colorRed">#FF0000</color>
+    <color name="colorGreenVivid">#32CD32</color>
 </resources>

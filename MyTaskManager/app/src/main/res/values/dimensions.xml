@@ -9,4 +9,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="standar_tollbar">56dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="icon_dimensions">100dp</dimen>
+    <dimen name="icon_big_dimensions">200dp</dimen>
 </resources>

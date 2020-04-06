@@ -10,7 +10,27 @@ class DetailsViewModel(outsideTask: Task) : ViewModel() {
     val task: LiveData<Task>
         get() = _task
 
+    private val _deleteTaskEvent = MutableLiveData<Boolean>()
+    val deleteTaskEvent: LiveData<Boolean>
+        get() = _deleteTaskEvent
+
+    private val _markDoneEvent = MutableLiveData<Boolean>()
+    val markDoneEvent: LiveData<Boolean>
+        get() = _markDoneEvent
+
     fun onRemoveTask() {
-        // TODO
+        _deleteTaskEvent.value = true
+    }
+
+    fun falseRemoveTask() {
+        _deleteTaskEvent.value = false
+    }
+
+    fun onMarkDoneTask() {
+        _markDoneEvent.value = true
+    }
+
+    fun falseMarkDoneTask() {
+        _markDoneEvent.value = false
     }
 }

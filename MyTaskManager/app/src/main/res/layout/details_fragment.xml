@@ -4,6 +4,7 @@
     tools:context="it.unito.di.taass.ui.user.news.detailed.DetailedNewsViewModel">
 
     <data>
+
         <variable
             name="viewModel"
             type="pwr.edu.mytaskmanager.ui.details.DetailsViewModel" />
@@ -13,78 +14,104 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/det_task_type_img"
-                        typeOfTask="@{viewModel.task.typeOfTask}"
-                        android:layout_width="@dimen/icon_dimensions"
-                        android:layout_height="@dimen/icon_dimensions"
-                        android:layout_marginTop="16dp"
-                        android:contentDescription="@string/app_name"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_launcher_background" />
+            <ImageView
+                android:id="@+id/det_task_type_img"
+                typeOfTask="@{viewModel.task.typeOfTask}"
+                android:layout_width="@dimen/icon_big_dimensions"
+                android:layout_height="@dimen/icon_big_dimensions"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/app_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
+
+            <ScrollView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/det_task_type_img">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/det_task_title"
-                        android:layout_width="0dp"
+                        android:layout_width="331dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="32dp"
                         android:gravity="center_horizontal|top"
                         android:lineSpacingExtra="0sp"
                         android:text="@{viewModel.task.title}"
-                        android:textSize="24sp"
+                        android:textSize="30sp"
                         app:autoSizeTextType="uniform"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/det_task_type_img"
                         tools:text="Very long Title" />
 
                     <TextView
                         android:id="@+id/det_task_date"
-                        android:layout_width="0dp"
+                        android:layout_width="363dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:gravity="center"
                         android:text="@{viewModel.task.dueTueDate.toGMTString()}"
                         android:textSize="18sp"
-                        app:layout_constraintEnd_toEndOf="@+id/det_task_title"
-                        app:layout_constraintStart_toStartOf="@+id/det_task_title"
-                        app:layout_constraintTop_toBottomOf="@+id/det_task_title"
                         tools:text="Titolo del progetto" />
 
                     <TextView
                         android:id="@+id/det_task_description"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="32dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="24dp"
                         android:layout_marginEnd="32dp"
+                        android:layout_marginBottom="16dp"
                         android:padding="6sp"
                         android:text="@{viewModel.task.description}"
                         android:textSize="16sp"
                         app:autoSizeTextType="uniform"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/det_task_date"
                         tools:text="@string/lorem_ipsum" />
+                </LinearLayout>
+            </ScrollView>
 
-                    <com.google.android.material.button.MaterialButton
-                        android:id="@+id/det_task_remove_task"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="32dp"
-                        android:onClick="@{() -> viewModel.onRemoveTask()}"
-                        android:text="@string/remove_task_bt"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/det_task_remove_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:onClick="@{() -> viewModel.onRemoveTask()}"
+                android:text="@string/remove_task_bt"
+                app:backgroundTint="@color/colorRed"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/button"
+                statusOfButton="@{viewModel.task.status}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/colorGreenVivid"
+                android:onClick="@{() -> viewModel.onMarkDoneTask()}"
+                android:text="@string/mark_as_done_bt"
+                app:layout_constraintBottom_toTopOf="@+id/det_task_remove_task"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
