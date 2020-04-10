@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/pickImageFragment"
+        android:name="pwr.edu.mymlkit.image.PickImageFragment"
+        android:label="Image Recognition"
+        tools:layout="@layout/pick_image_fragment" />
+    <fragment
+        android:id="@+id/textRecognitionFragment"
+        android:name="pwr.edu.mymlkit.text.TextRecognitionFragment"
+        android:label="Text Recognition"
+        tools:layout="@layout/text_recognition_fragment"/>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="pwr.edu.mymlkit.WelcomeFragment"
+        android:label="Welcome to MLKit"
+        tools:layout="@layout/welcome_fragment">
+        <action
+            android:id="@+id/action_welcomeFragment_to_textRecognitionFragment"
+            app:destination="@id/textRecognitionFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_pickImageFragment"
+            app:destination="@id/pickImageFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_placeholder"
+            app:destination="@id/placeholder" />
+    </fragment>
+    <fragment
+        android:id="@+id/placeholder"
+        android:label="object reco" />
+</navigation>
