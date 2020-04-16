@@ -33,8 +33,10 @@ class TextRecognitionFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding =
-            DataBindingUtil.inflate(inflater,
-                R.layout.text_recognition_fragment, container, false)
+            DataBindingUtil.inflate(
+                inflater,
+                R.layout.text_recognition_fragment, container, false
+            )
         binding.lifecycleOwner = viewLifecycleOwner
         binding.recognizeTextBt.setOnClickListener {
             startRecognizing(it)

@@ -32,8 +32,10 @@ class PickImageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater,
-            R.layout.pick_image_fragment, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.pick_image_fragment, container, false
+        )
         binding.pickButton.setOnClickListener {
             pickImage()
         }

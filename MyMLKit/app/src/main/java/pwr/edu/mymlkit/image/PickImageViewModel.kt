@@ -13,7 +13,7 @@ import com.google.firebase.ml.vision.common.FirebaseVisionImage
 
 class PickImageViewModel : ViewModel() {
 
-    private val _tagsText = MutableLiveData<String>("")
+    private val _tagsText = MutableLiveData("")
     val tagsText: LiveData<String>
         get() = _tagsText
 
@@ -29,10 +29,10 @@ class PickImageViewModel : ViewModel() {
      */
     fun processImageTagging(bitmap: Bitmap) {
         val visionImg = FirebaseVisionImage.fromBitmap(bitmap)
-        val labeler = FirebaseVision.getInstance().onDeviceImageLabeler.processImage(visionImg)
+        FirebaseVision.getInstance().onDeviceImageLabeler.processImage(visionImg)
             .addOnSuccessListener { tags ->
                 _tagsText.postValue(tags.joinToString(" ") { it.text })
-                Log.w("LAB", _tagsText.value)
+                Log.w("LAB", _tagsText.value!!)
             }
             .addOnFailureListener { ex -> Log.wtf("LAB", ex) }
     }

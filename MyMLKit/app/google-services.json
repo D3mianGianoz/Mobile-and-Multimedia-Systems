@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1056387387408-dtin14uaibuii5u82gsbsb7kqhv8t0f1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pwr.edu.mymlkit",
+            "certificate_hash": "d3afb7b7c1aea81775db5a56690107f212d5fa48"
+          }
+        },
+        {
           "client_id": "1056387387408-vep6b1effae1qbtflfjdj73lp4ggj05f.apps.googleusercontent.com",
           "client_type": 3
         }

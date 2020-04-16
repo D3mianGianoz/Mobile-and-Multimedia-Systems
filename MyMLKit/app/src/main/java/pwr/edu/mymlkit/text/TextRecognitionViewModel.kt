@@ -17,7 +17,7 @@ class TextRecognitionViewModel : ViewModel() {
         get() = _tagsText
 
     // TODO: Implement the ViewModel
-    fun recognizeText(imageView: ImageView, view: View){
+    fun recognizeText(imageView: ImageView, view: View) {
         _tagsText.value = ""
         view.isEnabled = false
         val bitmap = (imageView.drawable as BitmapDrawable).bitmap

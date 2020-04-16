@@ -34,7 +34,7 @@ class WelcomeFragment : Fragment() {
             navController.navigate(R.id.action_welcomeFragment_to_textRecognitionFragment)
         }
         binding.objectRec.setOnClickListener {
-//            navController.navigate(R.id.action_welcomeFragment_to_placeholder)
+            navController.navigate(R.id.action_welcomeFragment_to_objectFragment)
         }
 
         return binding.root

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
-    app:startDestination="@id/welcomeFragment"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
 
     <fragment
         android:id="@+id/pickImageFragment"
@@ -13,7 +14,7 @@
         android:id="@+id/textRecognitionFragment"
         android:name="pwr.edu.mymlkit.text.TextRecognitionFragment"
         android:label="Text Recognition"
-        tools:layout="@layout/text_recognition_fragment"/>
+        tools:layout="@layout/text_recognition_fragment" />
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="pwr.edu.mymlkit.WelcomeFragment"
@@ -26,10 +27,12 @@
             android:id="@+id/action_welcomeFragment_to_pickImageFragment"
             app:destination="@id/pickImageFragment" />
         <action
-            android:id="@+id/action_welcomeFragment_to_placeholder"
-            app:destination="@id/placeholder" />
+            android:id="@+id/action_welcomeFragment_to_objectFragment"
+            app:destination="@id/objectFragment" />
     </fragment>
     <fragment
-        android:id="@+id/placeholder"
-        android:label="object reco" />
+        android:id="@+id/objectFragment"
+        android:name="pwr.edu.mymlkit.object.ObjectFragment"
+        android:label="Object Detection"
+        tools:layout="@layout/object_fragment" />
 </navigation>
