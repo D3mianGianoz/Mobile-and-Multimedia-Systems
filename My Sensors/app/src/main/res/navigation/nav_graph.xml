@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="pwr.edu.mysensors.ui.sensor.SensorListFragment"
+        android:label="My Sensor"
+        tools:layout="@layout/sensor_fragment" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="pwr.edu.mysensors.ui.main.MainFragment"
+        android:label="Home"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_ballGame"
+            app:destination="@id/ballGame" />
+        <action
+            android:id="@+id/action_mainFragment_to_gpsAreaActivity"
+            app:destination="@id/gpsAreaActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/ballGame"
+        android:name="pwr.edu.mysensors.ui.game.BalanceGame"
+        android:label="BallGame" />
+    <activity
+        android:id="@+id/gpsAreaActivity"
+        android:name="pwr.edu.mysensors.ui.gps.GpsAreaActivity"
+        android:label="activity_gps_area"
+        tools:layout="@layout/activity_gps_area" />
+</navigation>

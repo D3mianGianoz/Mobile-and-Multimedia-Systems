@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My Sensors</string>
+    <string name="list_of_sensor">List of Sensor</string>
+    <string name="game">Go to game</string>
+    <string name="gps">GPS</string>
+    <string name="listOfSensor">List of Sensor</string>
+    <string name="stopped">Updates Stopped</string>
+    <string name="listening">Listening to location</string>
+    <string name="stoppedListening">Listening to location stopped</string>
+    <string name="enableGpsQ">Your GPS seems to be disabled, do you want to enable it?</string>
+    <string name="y">Yes</string>
+    <string name="n">No</string>
+    <string name="leftNeigh">You\'ve left your neighborhood!</string>
+    <string name="outOfNeigh">You are out of your neighborhood!</string>
+    <string name="backInNeigh">You\'re back in your neighborhood!</string>
+    <string name="inNeigh">You are in your neighborhood</string>
+    <string name="permissionDenied">Permission Denied</string>
+    <string name="welcome">Welcome to My Sensor App</string>
+</resources>
